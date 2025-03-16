@@ -48,3 +48,38 @@ function Education(){
       </div>
   )
 }
+
+function Experience(){
+  return (
+    <div className="exinfo">
+        <h2>Experience</h2>
+
+        <div className="exdetails">
+          <label htmlFor="company">Company Name</label>
+          <input type="text" name="cmp-name" id="company" />
+        </div>
+
+        <div className="exdetails">
+          <label htmlFor="position">Job Title</label>
+          <input type="text" name="cmp-position" id="position" />
+        </div>
+
+        <div className="exdetails">
+          <label htmlFor="responsibilities">Job Responsibilities</label>
+          <textarea id="responsibilities" name="cmp-responsibilities" rows={4} />
+        </div>
+
+        <div className="exdetails">
+          <div className="date2">
+            <label htmlFor="startDate2">Start Date</label>
+            <input type="date" name="start-date2" id="startDate2" />
+
+            <label htmlFor="endDate2">End Date</label>
+            <input type="date" name="end-date2" id="endDate2" />
+          </div>
+        </div>
+
+      </div>
+  )
+}
+
