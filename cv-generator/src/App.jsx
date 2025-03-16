@@ -21,4 +21,30 @@ function GeneralInfo(){
   )
 }
 
+function Education(){
+  return (
+    <div className="einfo">
+        <h2>Education</h2>
 
+        <div className="edetails">
+          <label htmlFor="school">School/College</label>
+          <input type="text" name="user-school" id="school" />
+        </div>
+
+        <div className="edetails">
+          <label htmlFor="studyTitle">Degree/Course</label>
+          <input type="text" name="user-studyTitle" id="studyTitle" />
+        </div>
+
+        <div className="edetails">
+          <div className="date">
+            <label htmlFor="startDate">Start Date</label>
+            <input type="date" name="start-date" id="startDate" />
+
+            <label htmlFor="endDate">End Date</label>
+            <input type="date" name="end-date" id="endDate" />
+          </div>
+        </div>
+      </div>
+  )
+}
