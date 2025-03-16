@@ -83,3 +83,15 @@ function Experience(){
   )
 }
 
+function App() {
+  return(
+    <div className="container">
+      <GeneralInfo />
+      <Education />
+      <Experience />
+    </div>
+
+  )
+}
+
+export default App;
