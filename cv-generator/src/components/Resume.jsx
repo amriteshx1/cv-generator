@@ -1,8 +1,15 @@
+import "../styles/Resume.css"
+
 function Header({generalInfo}){
     return (
         <div className="header">
+            <div className="pImg">
+            <img src="../assets/pf.jpg" alt="profile" />
+            </div>
+            <div className="miniH">
             <h1>{generalInfo.name}</h1>
             <h2>{generalInfo.profession}</h2>
+            </div>
         </div>
     )
 }
@@ -10,23 +17,26 @@ function Header({generalInfo}){
 function Sidebar({generalInfo, education}){
     return (
         <div className="sidebar">
-            <h3>Contact Details</h3>
             <div className="contact">
-                <div className="email">
-                    
+            <h3>Contact Details</h3>
+                <div className="logo">
+                    <img src="../assets/email-outline.svg" alt="email"/>
                     <p>{generalInfo.email}</p>
                 </div>
-                <div className="phone">
-                    
+                <div className="logo">
+                    <img src="../assets/phone.svg" alt="phone" />
                     <p>{generalInfo.phone}</p>
                 </div>
             </div>
 
-            <h3>Education</h3>
+           
             <div className="education">
-                <p>{education.studyTitle}</p>
-                <p>{education.school}</p>
-                <p>{education.startDate} - {education.endDate}</p>
+            <h3>Education</h3>
+            <div className="eresume">
+                <p className="sTitle">■ {education.studyTitle}</p>
+                <p className="sSchool">○ {education.school}</p>
+                <p className="sDuration">○ {education.startDate} to {education.endDate}</p>
+                </div>
             </div>
         </div>
     )
@@ -35,17 +45,30 @@ function Sidebar({generalInfo, education}){
 function Main({experience, about}){
     return (
         <div className="main">
+            <div className="summary">
             <h3>Summary</h3>
+            <hr />
             <p>{about.about}</p>
+            </div>
+
+            <div className="worke">
             <h3>Work Experience</h3>
-            <h4>{experience.company}</h4>
-            <h5>{experience.position}</h5>
-            <p>{experience.startDate2} - {experience.endDate2}</p>
+            <hr />
+            <h4 className="sTitle">{experience.company}</h4>
+            <h5 className="sPosition">{experience.position}</h5>
+            <p className="sDuration">{experience.startDate2} to {experience.endDate2}</p>
             <ul>
                 {experience.responsibilities.split("\n").map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
             </ul>
+            </div>
+
+            <div className="refer">
+                <h3>References</h3>
+                <hr />
+                <p>References available upon request.</p>
+            </div>
         </div>
     )
 }
@@ -54,10 +77,12 @@ function Main({experience, about}){
 function Resume({generalInfo, education, experience, about}){
     
     return (
-        <div className="r-container">
+        <div className="rContainer">
             <Header generalInfo={generalInfo} />
+            <div className="miniRContainer">
             <Sidebar generalInfo={generalInfo} education={education} />
             <Main experience={experience} about={about} />
+            </div>
 
         </div>
     )
