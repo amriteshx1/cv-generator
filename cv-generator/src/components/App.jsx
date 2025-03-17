@@ -1,5 +1,6 @@
 import "../styles/App.css"
 import { useState } from "react";
+import Resume from "./Resume.jsx";
 
 function GeneralInfo({generalInfo, handleGeneralChange}){
   return (
@@ -140,6 +141,8 @@ function App() {
     about: "",
   })
 
+  const [showResume, setShowResume] = useState(false);
+
   const handleGeneralChange = (e) => {
     setGeneralInfo({ ...generalInfo, [e.target.name]: e.target.value });
   };
@@ -156,9 +159,18 @@ function App() {
     setAbout({ ...about, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowResume(true);
+    console.log("Submitted Data:", { generalInfo, education, experience, about });
+  };
+
   return(
+    
+    <div className="mainContainer">
+
     <div className="container">
-      <form>
+      <form onSubmit={handleSubmit}>
       <h1>[CV/Resume - Generator]</h1>
       <GeneralInfo generalInfo={generalInfo} handleGeneralChange={handleGeneralChange}/>
       <Education education={education} handleEducationChange={handleEducationChange}/>
@@ -167,12 +179,19 @@ function App() {
 
       <div className="btn">
       <button type="button" id="cancel">Cancel</button>
-      <button type="submit" id="submit">Submit</button>
+      <button type="submit" id="submit" onClick={handleSubmit}>Submit</button>
       </div>
       </form>
+      </div>
+      
+      {showResume && (
+      <div className="container2">
+      <Resume generalInfo={generalInfo} education={education} experience={experience} about={about} />
+      </div>
+      )}
+      
     </div>
-
-  )
+  );
 }
 
 export default App;
