@@ -32,7 +32,23 @@ function Sidebar({generalInfo, education}){
     )
 }
 
-
+function Main({experience, about}){
+    return (
+        <div className="main">
+            <h3>Summary</h3>
+            <p>{about.about}</p>
+            <h3>Work Experience</h3>
+            <h4>{experience.company}</h4>
+            <h5>{experience.position}</h5>
+            <p>{experience.startDate2} - {experience.endDate2}</p>
+            <ul>
+                {experience.responsibilities.split("\n").map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+            </ul>
+        </div>
+    )
+}
 
 
 function Resume({generalInfo, education, experience, about}){
