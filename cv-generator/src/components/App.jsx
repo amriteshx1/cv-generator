@@ -143,6 +143,10 @@ function App() {
 
   const [showResume, setShowResume] = useState(false);
 
+  window.onload = () => {
+  alert("🎓 Welcome to the CV/Resume Generator! 📄\n\nFill in all your details and press the Submit button. ✅\n\nAfter that, you can edit in real time, and your resume will update dynamically. 🔄\n\nSit back, tweak as you go, and enjoy the ride! 🚀");
+  };
+  
   const handleGeneralChange = (e) => {
     setGeneralInfo({ ...generalInfo, [e.target.name]: e.target.value });
   };
