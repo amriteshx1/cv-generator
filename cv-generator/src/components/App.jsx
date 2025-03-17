@@ -78,7 +78,7 @@ function Experience({experience, handleExperienceChange}){
         </div>
 
         <div className="exdetails">
-          <label htmlFor="responsibilities">Job Responsibilities</label>
+          <label htmlFor="responsibilities">Job Responsibilities (Press Enter after each)</label>
           <textarea id="responsibilities" name="responsibilities" rows={4} value={experience.responsibilities} onChange={handleExperienceChange} />
         </div>
 
