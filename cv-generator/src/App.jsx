@@ -1,3 +1,5 @@
+import "./App.css";
+
 function GeneralInfo(){
   return (
     <div className="ginfo">
@@ -38,11 +40,15 @@ function Education(){
 
         <div className="edetails">
           <div className="date">
+            <div className="miniDate1">
             <label htmlFor="startDate">Start Date</label>
             <input type="date" name="start-date" id="startDate" />
+            </div>
 
+            <div className="miniDate1">
             <label htmlFor="endDate">End Date</label>
             <input type="date" name="end-date" id="endDate" />
+            </div>
           </div>
         </div>
       </div>
@@ -71,11 +77,15 @@ function Experience(){
 
         <div className="exdetails">
           <div className="date2">
+            <div className="miniDate2">
             <label htmlFor="startDate2">Start Date</label>
             <input type="date" name="start-date2" id="startDate2" />
+            </div>
 
+            <div className="miniDate2">
             <label htmlFor="endDate2">End Date</label>
             <input type="date" name="end-date2" id="endDate2" />
+            </div>
           </div>
         </div>
 
