@@ -1,6 +1,6 @@
-import "../styles/App.css"
-import { useState } from "react";
-import Resume from "./Resume.jsx";
+import { useState } from 'react';
+import './App.css';
+import Resume from './Resume.jsx';
 
 function GeneralInfo({generalInfo, handleGeneralChange}){
   return (
@@ -166,7 +166,6 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowResume(true);
-    console.log("Submitted Data:", { generalInfo, education, experience, about });
   };
 
   return(

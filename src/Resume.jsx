@@ -1,10 +1,13 @@
-import "../styles/Resume.css"
+import email from './assets/email-outline.svg'
+import phone from './assets/phone.svg'
+import pfImg from'./assets/pfImg.jpg'
+import './Resume.css';
 
 function Header({generalInfo}){
     return (
         <div className="header">
             <div className="pImg">
-            <img src="../assets/pf.jpg" alt="profile" />
+            <img src={pfImg} alt="profile" />
             </div>
             <div className="miniH">
             <h1>{generalInfo.name}</h1>
@@ -20,11 +23,11 @@ function Sidebar({generalInfo, education}){
             <div className="contact">
             <h3>Contact Details</h3>
                 <div className="logo">
-                    <img src="../assets/email-outline.svg" alt="email"/>
+                    <img src={email} alt="email"/>
                     <p>{generalInfo.email}</p>
                 </div>
                 <div className="logo">
-                    <img src="../assets/phone.svg" alt="phone" />
+                    <img src={phone} alt="phone" />
                     <p>{generalInfo.phone}</p>
                 </div>
             </div>
