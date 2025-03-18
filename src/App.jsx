@@ -79,7 +79,13 @@ function Experience({experience, handleExperienceChange}){
 
         <div className="exdetails">
           <label htmlFor="responsibilities">Job Responsibilities (Press Enter after each)</label>
-          <textarea id="responsibilities" name="responsibilities" rows={4} value={experience.responsibilities} onChange={handleExperienceChange} />
+          <textarea id="responsibilities" name="responsibilities" rows={5} value={experience.responsibilities} onChange={handleExperienceChange}
+          placeholder="Enter each responsibility on a new line.
+Example:
+Lead a team of developers
+Coordinate with cross-functional teams
+Improve website performance by 30%
+"/>
         </div>
 
         <div className="exdetails">
@@ -107,7 +113,7 @@ function About({about, handleAboutChange}){
 
       <div className="adetails">
       <label htmlFor="about">Your Description</label>
-      <textarea name="about" id="about" rows={4} value={about.about} onChange={handleAboutChange} />
+      <textarea name="about" id="about" rows={3} value={about.about} onChange={handleAboutChange} placeholder='Briefly introduce yourself...'/>
       </div>
     </div>
   )
